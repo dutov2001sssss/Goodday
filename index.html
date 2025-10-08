@@ -3,70 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Антикинотеатр Goodday - Чита</title>
+    <title>Goodday | Антикинотеатр премиум-класса в Чите</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="loader"></div>
+            <p>Загружаем магию кино...</p>
+        </div>
+    </div>
+
+    <!-- Курсор -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
     <!-- Шапка -->
     <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <h1>Goodday</h1>
-                    <span>Антикинотеатр</span>
-                </div>
-                <nav class="nav">
-                    <a href="#halls" class="nav-link">Залы</a>
-                    <a href="#services" class="nav-link">Услуги</a>
-                    <a href="#prices" class="nav-link">Цены</a>
-                    <a href="#contacts" class="nav-link">Контакты</a>
-                </nav>
-                <div class="header-contacts">
-                    <a href="tel:+79245058382" class="phone">+7 924 505 83 82</a>
-                </div>
+        <nav class="nav">
+            <div class="nav-brand">
+                <span class="brand-main">GOODDAY</span>
+                <span class="brand-sub">антикинотеатр</span>
             </div>
-        </div>
+            <div class="nav-menu">
+                <a href="#halls" class="nav-link" data-text="ЗАЛЫ">ЗАЛЫ</a>
+                <a href="#services" class="nav-link" data-text="УСЛУГИ">УСЛУГИ</a>
+                <a href="#gallery" class="nav-link" data-text="ГАЛЕРЕЯ">ГАЛЕРЕЯ</a>
+                <a href="#booking" class="nav-link booking-btn" data-text="БРОНЬ">БРОНЬ</a>
+            </div>
+            <div class="nav-contacts">
+                <a href="tel:+79245058382" class="contact-phone">
+                    <i class="fas fa-phone"></i>
+                    +7 924 505 83 82
+                </a>
+            </div>
+            <div class="nav-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
     </header>
 
     <!-- Герой секция -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2 class="hero-title">Уникальные кинопоказы<br>в уютной атмосфере</h2>
-                <p class="hero-subtitle">г. Чита, Северный мкр 51</p>
-                <button class="cta-button" onclick="scrollToBooking()">Забронировать зал</button>
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <div class="hero-particles" id="particles-js"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>PREMIUM CINEMA</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">ИСКУССТВО</span>
+                <span class="title-line">КИНОПРОСМОТРА</span>
+            </h1>
+            <p class="hero-subtitle">Эксклюзивные кинозалы с индивидуальным обслуживанием в самом сердце Читы</p>
+            <div class="hero-cta">
+                <button class="cta-btn primary" onclick="scrollToSection('booking')">
+                    <span>ЗАБРОНИРОВАТЬ</span>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <button class="cta-btn secondary" onclick="scrollToSection('halls')">
+                    <span>ВЫБРАТЬ ЗАЛ</span>
+                </button>
+            </div>
+            <div class="hero-scroll">
+                <div class="scroll-indicator"></div>
             </div>
         </div>
     </section>
 
     <!-- Залы -->
-    <section id="halls" class="halls">
+    <section id="halls" class="halls-section">
         <div class="container">
-            <h2 class="section-title">Наши залы</h2>
+            <div class="section-header">
+                <h2 class="section-title">ЭКСКЛЮЗИВНЫЕ ЗАЛЫ</h2>
+                <p class="section-subtitle">Пространства, созданные для особых моментов</p>
+            </div>
+
             <div class="halls-grid">
-                <div class="hall-card">
-                    <div class="hall-image" style="background-image: url('https://via.placeholder.com/400x300/4A5568/FFFFFF?text=Уютный+уголок')"></div>
-                    <div class="hall-info">
-                        <h3>Уютный уголок</h3>
-                        <p>Малый зал • до 4 человек</p>
-                        <span class="hall-tag">Идеально для пар</span>
+                <!-- Зал 1 -->
+                <div class="hall-card" data-hall="intimate">
+                    <div class="hall-image">
+                        <div class="image-overlay"></div>
+                        <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Уютный уголок" loading="lazy">
+                        <div class="hall-badge">ДО 4 ЧЕЛОВЕК</div>
+                    </div>
+                    <div class="hall-content">
+                        <h3>LE PETIT RÊVE</h3>
+                        <p>Интимная атмосфера для двоих с панорамным экраном и системой Dolby Atmos</p>
+                        <div class="hall-features">
+                            <span><i class="fas fa-couch"></i> Диваны-трансформеры</span>
+                            <span><i class="fas fa-wine-glass-alt"></i> Мини-бар</span>
+                            <span><i class="fas fa-star"></i> Премиум звук</span>
+                        </div>
+                        <div class="hall-price">
+                            <span class="price">1 200 ₽/час</span>
+                            <button class="book-hall" onclick="scrollToBooking('LE PETIT RÊVE')">Выбрать</button>
+                        </div>
                     </div>
                 </div>
-                <div class="hall-card">
-                    <div class="hall-image" style="background-image: url('https://via.placeholder.com/400x300/2D3748/FFFFFF?text=Сердце+вечера')"></div>
-                    <div class="hall-info">
-                        <h3>Сердце вечера</h3>
-                        <p>Средний зал • до 8 человек</p>
-                        <span class="hall-tag">Для компании друзей</span>
+
+                <!-- Зал 2 -->
+                <div class="hall-card featured" data-hall="comfort">
+                    <div class="hall-image">
+                        <div class="image-overlay"></div>
+                        <img src="https://images.unsplash.com/photo-1543536448-1e76fc2795bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2090&q=80" alt="Сердце вечера" loading="lazy">
+                        <div class="hall-badge popular">ПОПУЛЯРНЫЙ</div>
+                        <div class="hall-badge">ДО 8 ЧЕЛОВЕК</div>
+                    </div>
+                    <div class="hall-content">
+                        <h3>L'AMOUR ÉTERNEL</h3>
+                        <p>Просторный зал с каминным залом и системой 4K HDR для идеального просмотра</p>
+                        <div class="hall-features">
+                            <span><i class="fas fa-fireplace"></i> Каминная зона</span>
+                            <span><i class="fas fa-utensils"></i> Обслуживание</span>
+                            <span><i class="fas fa-film"></i> 4K HDR</span>
+                        </div>
+                        <div class="hall-price">
+                            <span class="price">1 800 ₽/час</span>
+                            <button class="book-hall" onclick="scrollToBooking('L\'AMOUR ÉTERNEL')">Выбрать</button>
+                        </div>
                     </div>
                 </div>
-                <div class="hall-card">
-                    <div class="hall-image" style="background-image: url('https://via.placeholder.com/400x300/1A202C/FFFFFF?text=Бесконечная+история')"></div>
-                    <div class="hall-info">
-                        <h3>Бесконечная история</h3>
-                        <p>Большой зал • до 15 человек</p>
-                        <span class="hall-tag">Для мероприятий</span>
+
+                <!-- Зал 3 -->
+                <div class="hall-card" data-hall="premium">
+                    <div class="hall-image">
+                        <div class="image-overlay"></div>
+                        <img src="https://images.unsplash.com/photo-1489599809505-f2d4c65055c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="Бесконечная история" loading="lazy">
+                        <div class="hall-badge">ДО 15 ЧЕЛОВЕК</div>
+                    </div>
+                    <div class="hall-content">
+                        <h3>GRAND SPECTACLE</h3>
+                        <p>Премиум зал для мероприятий с собственной кухней и VIP обслуживанием</p>
+                        <div class="hall-features">
+                            <span><i class="fas fa-crown"></i> VIP обслуживание</span>
+                            <span><i class="fas fa-chess-queen"></i> Банкетная зона</span>
+                            <span><i class="fas fa-music"></i> Dolby Cinema</span>
+                        </div>
+                        <div class="hall-price">
+                            <span class="price">3 500 ₽/час</span>
+                            <button class="book-hall" onclick="scrollToBooking('GRAND SPECTACLE')">Выбрать</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -74,150 +158,181 @@
     </section>
 
     <!-- Услуги -->
-    <section id="services" class="services">
+    <section id="services" class="services-section">
         <div class="container">
-            <h2 class="section-title">Наши услуги</h2>
+            <div class="section-header">
+                <h2 class="section-title">ЭКСКЛЮЗИВНЫЕ УСЛУГИ</h2>
+                <p class="section-subtitle">Превращаем обычный вечер в незабываемое событие</p>
+            </div>
+
             <div class="services-grid">
-                <div class="service-card" onmouseenter="showServiceInfo(0)" onmouseleave="hideServiceInfo()">
-                    <div class="service-image" style="background-image: url('https://via.placeholder.com/300x200/ED8936/FFFFFF?text=Романтические+свидания')"></div>
-                    <div class="service-info">
-                        <h3>Романтические свидания</h3>
-                        <p>Идеальная атмосфера для влюбленных</p>
+                <div class="service-card" data-service="romantic">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Романтические свидания</h3>
+                    <p>Создаем идеальную атмосферу для влюбленных</p>
+                    <div class="service-hover">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Лепестки роз и ароматические свечи</li>
+                            <li><i class="fas fa-check"></i> Шампанское и шоколадные конфеты ручной работы</li>
+                            <li><i class="fas fa-check"></i> Персональный подбор фильмов</li>
+                            <li><i class="fas fa-check"></i> Фотосессия на профессиональную камеру</li>
+                            <li><i class="fas fa-check"></i> Ужин от шеф-повара</li>
+                        </ul>
+                        <div class="service-price">+ 1 500 ₽ к аренде</div>
                     </div>
                 </div>
-                <div class="service-card" onmouseenter="showServiceInfo(1)" onmouseleave="hideServiceInfo()">
-                    <div class="service-image" style="background-image: url('https://via.placeholder.com/300x200/38B2AC/FFFFFF?text=Тематические+вечера')"></div>
-                    <div class="service-info">
-                        <h3>Тематические вечера</h3>
-                        <p>Особые мероприятия под ваши предпочтения</p>
+
+                <div class="service-card" data-service="theme">
+                    <div class="service-icon">
+                        <i class="fas fa-mask"></i>
+                    </div>
+                    <h3>Тематические вечера</h3>
+                    <p>Полное погружение в выбранную эпоху или вселенную</p>
+                    <div class="service-hover">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Полное оформление зала по тематике</li>
+                            <li><i class="fas fa-check"></i> Костюмы и реквизит для гостей</li>
+                            <li><i class="fas fa-check"></i> Специальное меню и коктейли</li>
+                            <li><i class="fas fa-check"></i> Саундтрек и световое шоу</li>
+                            <li><i class="fas fa-check"></i> Актеры и ведущие</li>
+                        </ul>
+                        <div class="service-price">от 3 000 ₽</div>
                     </div>
                 </div>
-                <div class="service-card" onmouseenter="showServiceInfo(2)" onmouseleave="hideServiceInfo()">
-                    <div class="service-image" style="background-image: url('https://via.placeholder.com/300x200/9F7AEA/FFFFFF?text=Кино+и+ужин')"></div>
-                    <div class="service-info">
-                        <h3>Кино и ужин</h3>
-                        <p>Просмотр фильма с гастрономическим сопровождением</p>
+
+                <div class="service-card" data-service="gourmet">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Киноужин</h3>
+                    <p>Гастрономическое путешествие во время просмотра</p>
+                    <div class="service-hover">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Меню, созданное под фильм</li>
+                            <li><i class="fas fa-check"></i> Сомелье-консультант</li>
+                            <li><i class="fas fa-check"></i> Поэтапная подача блюд</li>
+                            <li><i class="fas fa-check"></i> Десерты от кондитера</li>
+                            <li><i class="fas fa-check"></i> Вино и напитки премиум-класса</li>
+                        </ul>
+                        <div class="service-price">от 2 500 ₽/чел</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Всплывающее окно с информацией об услуге -->
-    <div id="servicePopup" class="service-popup">
-        <div class="popup-content">
-            <span class="close-btn" onclick="hideServiceInfo()">&times;</span>
-            <h3 id="popupTitle">Название услуги</h3>
-            <ul id="popupList" class="service-features">
-                <!-- Список будет заполняться через JavaScript -->
-            </ul>
-        </div>
-    </div>
-
-    <!-- Цены -->
-    <section id="prices" class="prices">
+    <!-- Галерея -->
+    <section id="gallery" class="gallery-section">
         <div class="container">
-            <h2 class="section-title">Прейскурант</h2>
-            <div class="prices-grid">
-                <div class="price-card">
-                    <h3>Уютный уголок</h3>
-                    <div class="price">800 ₽/час</div>
-                    <ul class="price-features">
-                        <li>✓ До 4 человек</li>
-                        <li>✓ Комфортные диваны</li>
-                        <li>✓ Личный проектор</li>
-                        <li>✓ Выбор фильмов</li>
-                    </ul>
+            <div class="section-header">
+                <h2 class="section-title">ГАЛЕРЕЯ ВПЕЧАТЛЕНИЙ</h2>
+                <p class="section-subtitle">Моменты, которые остаются с вами навсегда</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1489599809505-f2d4c65055c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="Интерьер зала" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span>Премиум интерьеры</span>
+                    </div>
                 </div>
-                <div class="price-card featured">
-                    <div class="popular-tag">Популярный</div>
-                    <h3>Сердце вечера</h3>
-                    <div class="price">1200 ₽/час</div>
-                    <ul class="price-features">
-                        <li>✓ До 8 человек</li>
-                        <li>✓ Уютные пуфы и диваны</li>
-                        <li>✓ Профессиональный звук</li>
-                        <li>✓ Базовый декор</li>
-                    </ul>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1543536448-1e76fc2795bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2090&q=80" alt="Комфортная зона" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span>Зоны отдыха</span>
+                    </div>
                 </div>
-                <div class="price-card">
-                    <h3>Бесконечная история</h3>
-                    <div class="price">2000 ₽/час</div>
-                    <ul class="price-features">
-                        <li>✓ До 15 человек</li>
-                        <li>✓ Пространство для мероприятий</li>
-                        <li>✓ Премиум звуковая система</li>
-                        <li>✓ Индивидуальный декор</li>
-                    </ul>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Романтическая атмосфера" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span>Романтические постановки</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Бронирование -->
-    <section id="booking" class="booking">
+    <section id="booking" class="booking-section">
         <div class="container">
-            <h2 class="section-title">Бронирование зала</h2>
-            <form class="booking-form" id="bookingForm">
-                <div class="form-group">
-                    <label for="name">Ваше имя</label>
-                    <input type="text" id="name" name="name" required>
+            <div class="booking-grid">
+                <div class="booking-info">
+                    <h2>ЗАБРОНИРУЙТЕ<br>ВАШ ИДЕАЛЬНЫЙ ВЕЧЕР</h2>
+                    <div class="booking-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Подтверждение за 5 минут</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Без предоплаты</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Персональный менеджер</span>
+                        </div>
+                    </div>
+                    <div class="contact-methods">
+                        <a href="https://t.me/The_lupaaaaa" class="contact-method" target="_blank">
+                            <i class="fab fa-telegram"></i>
+                            <span>Telegram</span>
+                        </a>
+                        <a href="https://vk.ru/the___lupa" class="contact-method" target="_blank">
+                            <i class="fab fa-vk"></i>
+                            <span>ВКонтакте</span>
+                        </a>
+                        <a href="tel:+79245058382" class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <span>+7 924 505 83 82</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="phone">Телефон</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="hall">Выберите зал</label>
-                    <select id="hall" name="hall" required>
-                        <option value="">Выберите зал</option>
-                        <option value="Уютный уголок">Уютный уголок</option>
-                        <option value="Сердце вечера">Сердце вечера</option>
-                        <option value="Бесконечная история">Бесконечная история</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="date">Дата</label>
-                    <input type="date" id="date" name="date" required>
-                </div>
-                <div class="form-group">
-                    <label for="time">Время</label>
-                    <input type="time" id="time" name="time" required>
-                </div>
-                <div class="form-group">
-                    <label for="hours">Количество часов</label>
-                    <select id="hours" name="hours" required>
-                        <option value="1">1 час</option>
-                        <option value="2">2 часа</option>
-                        <option value="3">3 часа</option>
-                        <option value="4">4 часа</option>
-                    </select>
-                </div>
-                <button type="submit" class="submit-btn">Забронировать</button>
-            </form>
-        </div>
-    </section>
 
-    <!-- Контакты -->
-    <section id="contacts" class="contacts">
-        <div class="container">
-            <h2 class="section-title">Контакты</h2>
-            <div class="contacts-content">
-                <div class="contact-info">
-                    <h3>Антикинотеатр Goodday</h3>
-                    <p>📍 г. Чита, Северный мкр 51</p>
-                    <p>📞 <a href="tel:+79245058382">+7 924 505 83 82</a></p>
-                    <p>✉️ <a href="mailto:info@goodday-cinema.ru">info@goodday-cinema.ru</a></p>
-                    <div class="social-links">
-                        <a href="https://vk.ru/the___lupa" target="_blank" class="social-link">VK</a>
-                        <a href="https://t.me/The_lupaaaaa" target="_blank" class="social-link">Telegram</a>
-                    </div>
-                </div>
-                <div class="map-placeholder">
-                    <!-- Здесь можно вставить карту -->
-                    <div style="background: #e2e8f0; height: 200px; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
-                        Карта: г. Чита, Северный мкр 51
-                    </div>
+                <div class="booking-form">
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <label for="name">ВАШЕ ИМЯ</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">ТЕЛЕФОН</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hall">ВЫБЕРИТЕ ЗАЛ</label>
+                            <select id="hall" name="hall" required>
+                                <option value="">-- Выберите зал --</option>
+                                <option value="LE PETIT RÊVE">LE PETIT RÊVE (до 4 чел)</option>
+                                <option value="L'AMOUR ÉTERNEL">L'AMOUR ÉTERNEL (до 8 чел)</option>
+                                <option value="GRAND SPECTACLE">GRAND SPECTACLE (до 15 чел)</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">ДАТА</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">ВРЕМЯ</label>
+                                <input type="time" id="time" name="time" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="hours">КОЛИЧЕСТВО ЧАСОВ</label>
+                            <select id="hours" name="hours" required>
+                                <option value="2">2 часа</option>
+                                <option value="3">3 часа</option>
+                                <option value="4">4 часа</option>
+                                <option value="5">5+ часов</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span>ЗАБРОНИРОВАТЬ</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -226,20 +341,39 @@
     <!-- Футер -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Антикинотеатр Goodday. Все права защищены.</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>GOODDAY</h3>
+                    <p>Антикинотеатр премиум-класса</p>
+                </div>
+                <div class="footer-info">
+                    <p><i class="fas fa-map-marker-alt"></i> г. Чита, Северный мкр 51</p>
+                    <p><i class="fas fa-phone"></i> +7 924 505 83 82</p>
+                    <p><i class="fas fa-clock"></i> Ежедневно 12:00 - 02:00</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://t.me/The_lupaaaaa" target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a href="https://vk.ru/the___lupa" target="_blank"><i class="fab fa-vk"></i></a>
+                    <a href="tel:+79245058382"><i class="fas fa-phone"></i></a>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- Модальное окно подтверждения -->
+    <!-- Модальное окно -->
     <div id="successModal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <h3>Бронирование отправлено!</h3>
-            <p>Мы свяжемся с вами в ближайшее время для подтверждения брони.</p>
-            <button onclick="closeModal()" class="modal-btn">Отлично</button>
+            <div class="modal-success">
+                <i class="fas fa-check-circle"></i>
+                <h3>БРОНИРОВАНИЕ ПРИНЯТО!</h3>
+                <p>Мы свяжемся с вами в течение 5 минут для подтверждения</p>
+                <button onclick="closeModal()" class="modal-btn">ПОНЯТНО</button>
+            </div>
         </div>
     </div>
 
+    <!-- Подключаем библиотеки -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
