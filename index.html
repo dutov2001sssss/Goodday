@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Антикинотеатр Goodday - Чита</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Goodday</h1>
+                    <span>Антикинотеатр</span>
+                </div>
+                <nav class="nav">
+                    <a href="#halls" class="nav-link">Залы</a>
+                    <a href="#services" class="nav-link">Услуги</a>
+                    <a href="#prices" class="nav-link">Цены</a>
+                    <a href="#contacts" class="nav-link">Контакты</a>
+                </nav>
+                <div class="header-contacts">
+                    <a href="tel:+79245058382" class="phone">+7 924 505 83 82</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Герой секция -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Уникальные кинопоказы<br>в уютной атмосфере</h2>
+                <p class="hero-subtitle">г. Чита, Северный мкр 51</p>
+                <button class="cta-button" onclick="scrollToBooking()">Забронировать зал</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Залы -->
+    <section id="halls" class="halls">
+        <div class="container">
+            <h2 class="section-title">Наши залы</h2>
+            <div class="halls-grid">
+                <div class="hall-card">
+                    <div class="hall-image" style="background-image: url('https://via.placeholder.com/400x300/4A5568/FFFFFF?text=Уютный+уголок')"></div>
+                    <div class="hall-info">
+                        <h3>Уютный уголок</h3>
+                        <p>Малый зал • до 4 человек</p>
+                        <span class="hall-tag">Идеально для пар</span>
+                    </div>
+                </div>
+                <div class="hall-card">
+                    <div class="hall-image" style="background-image: url('https://via.placeholder.com/400x300/2D3748/FFFFFF?text=Сердце+вечера')"></div>
+                    <div class="hall-info">
+                        <h3>Сердце вечера</h3>
+                        <p>Средний зал • до 8 человек</p>
+                        <span class="hall-tag">Для компании друзей</span>
+                    </div>
+                </div>
+                <div class="hall-card">
+                    <div class="hall-image" style="background-image: url('https://via.placeholder.com/400x300/1A202C/FFFFFF?text=Бесконечная+история')"></div>
+                    <div class="hall-info">
+                        <h3>Бесконечная история</h3>
+                        <p>Большой зал • до 15 человек</p>
+                        <span class="hall-tag">Для мероприятий</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Услуги -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Наши услуги</h2>
+            <div class="services-grid">
+                <div class="service-card" onmouseenter="showServiceInfo(0)" onmouseleave="hideServiceInfo()">
+                    <div class="service-image" style="background-image: url('https://via.placeholder.com/300x200/ED8936/FFFFFF?text=Романтические+свидания')"></div>
+                    <div class="service-info">
+                        <h3>Романтические свидания</h3>
+                        <p>Идеальная атмосфера для влюбленных</p>
+                    </div>
+                </div>
+                <div class="service-card" onmouseenter="showServiceInfo(1)" onmouseleave="hideServiceInfo()">
+                    <div class="service-image" style="background-image: url('https://via.placeholder.com/300x200/38B2AC/FFFFFF?text=Тематические+вечера')"></div>
+                    <div class="service-info">
+                        <h3>Тематические вечера</h3>
+                        <p>Особые мероприятия под ваши предпочтения</p>
+                    </div>
+                </div>
+                <div class="service-card" onmouseenter="showServiceInfo(2)" onmouseleave="hideServiceInfo()">
+                    <div class="service-image" style="background-image: url('https://via.placeholder.com/300x200/9F7AEA/FFFFFF?text=Кино+и+ужин')"></div>
+                    <div class="service-info">
+                        <h3>Кино и ужин</h3>
+                        <p>Просмотр фильма с гастрономическим сопровождением</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Всплывающее окно с информацией об услуге -->
+    <div id="servicePopup" class="service-popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="hideServiceInfo()">&times;</span>
+            <h3 id="popupTitle">Название услуги</h3>
+            <ul id="popupList" class="service-features">
+                <!-- Список будет заполняться через JavaScript -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Цены -->
+    <section id="prices" class="prices">
+        <div class="container">
+            <h2 class="section-title">Прейскурант</h2>
+            <div class="prices-grid">
+                <div class="price-card">
+                    <h3>Уютный уголок</h3>
+                    <div class="price">800 ₽/час</div>
+                    <ul class="price-features">
+                        <li>✓ До 4 человек</li>
+                        <li>✓ Комфортные диваны</li>
+                        <li>✓ Личный проектор</li>
+                        <li>✓ Выбор фильмов</li>
+                    </ul>
+                </div>
+                <div class="price-card featured">
+                    <div class="popular-tag">Популярный</div>
+                    <h3>Сердце вечера</h3>
+                    <div class="price">1200 ₽/час</div>
+                    <ul class="price-features">
+                        <li>✓ До 8 человек</li>
+                        <li>✓ Уютные пуфы и диваны</li>
+                        <li>✓ Профессиональный звук</li>
+                        <li>✓ Базовый декор</li>
+                    </ul>
+                </div>
+                <div class="price-card">
+                    <h3>Бесконечная история</h3>
+                    <div class="price">2000 ₽/час</div>
+                    <ul class="price-features">
+                        <li>✓ До 15 человек</li>
+                        <li>✓ Пространство для мероприятий</li>
+                        <li>✓ Премиум звуковая система</li>
+                        <li>✓ Индивидуальный декор</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Бронирование -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <h2 class="section-title">Бронирование зала</h2>
+            <form class="booking-form" id="bookingForm">
+                <div class="form-group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="hall">Выберите зал</label>
+                    <select id="hall" name="hall" required>
+                        <option value="">Выберите зал</option>
+                        <option value="Уютный уголок">Уютный уголок</option>
+                        <option value="Сердце вечера">Сердце вечера</option>
+                        <option value="Бесконечная история">Бесконечная история</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Дата</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Время</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="hours">Количество часов</label>
+                    <select id="hours" name="hours" required>
+                        <option value="1">1 час</option>
+                        <option value="2">2 часа</option>
+                        <option value="3">3 часа</option>
+                        <option value="4">4 часа</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Забронировать</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contacts" class="contacts">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
+            <div class="contacts-content">
+                <div class="contact-info">
+                    <h3>Антикинотеатр Goodday</h3>
+                    <p>📍 г. Чита, Северный мкр 51</p>
+                    <p>📞 <a href="tel:+79245058382">+7 924 505 83 82</a></p>
+                    <p>✉️ <a href="mailto:info@goodday-cinema.ru">info@goodday-cinema.ru</a></p>
+                    <div class="social-links">
+                        <a href="https://vk.ru/the___lupa" target="_blank" class="social-link">VK</a>
+                        <a href="https://t.me/The_lupaaaaa" target="_blank" class="social-link">Telegram</a>
+                    </div>
+                </div>
+                <div class="map-placeholder">
+                    <!-- Здесь можно вставить карту -->
+                    <div style="background: #e2e8f0; height: 200px; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
+                        Карта: г. Чита, Северный мкр 51
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Антикинотеатр Goodday. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Модальное окно подтверждения -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h3>Бронирование отправлено!</h3>
+            <p>Мы свяжемся с вами в ближайшее время для подтверждения брони.</p>
+            <button onclick="closeModal()" class="modal-btn">Отлично</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
